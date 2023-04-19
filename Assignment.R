@@ -1,4 +1,5 @@
-setwd("/Users/weronika/Documents/RStudio/test")
+#set working directory with all necessary files
+setwd("...")
 
 #loading necessary libraries
 

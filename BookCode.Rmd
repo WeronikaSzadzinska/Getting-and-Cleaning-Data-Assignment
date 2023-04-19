@@ -1,0 +1,53 @@
+---
+title: "CodeBook"
+output: html_document
+date: "2023-04-19"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Experiment description
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz.
+
+### Features description
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ.
+
+### Data sets
+
+when downloading the zip file, there are two additional folders: test and train. For the script to work properly in one folder assemble following files:
+
+- features.txt (from main folder) 
+- activity_labels.txt (from main folder)
+
+- X_train.txt (from train folder)
+- y_train.txt (from train folder)
+- subject_train.txt (from train folder)
+
+- X_test.txt (from test folder)
+- y_test.txt (from test folder)
+- subject_test.txt (from test folder)
+
+### Features.txt
+gives names of the columns for X datasets (train and test)
+
+### Activity_labels.txt 
+allows to change Y datasets numerical variables to descriptive variables (instead of 1, 5 etc there will be WALKING, SITTING etc)
+
+### Description of data manipulation in the script
+
+1. column names for dataframes (X.., y.., subject..) where changed (both for train and test data)
+
+2. dataframes (X.., y.., subject..) where bind together (both for train and test data)
+
+3. columns with measurements (3:end) where filtered to left only ones with means or sds
+
+4. there was a verification if test and train dataframes have the same columns
+
+5. test and train dataframes where combined
+
+6. activity labels were changed from numerical to descriptive
+
+7. data set was grouped by subject and activity type to obtain mean values for each measurement 
+
